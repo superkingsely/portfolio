@@ -6,4 +6,62 @@
 .app{
     min-height: 100vh;
     background-color: aquamarine;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.app-content{
+    /* border: 5px solid; */
+    min-height: 100vh;
+    max-width: 1200px;
+    width: 100%;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.menu ul{
+    display: flex;
+    gap: 20px;
+}
+.menu ul li{
+    list-style: none;
+}
+.mobile-menu-button{
+    display: none;
+}
+/* break point */
+@media screen and (max-width:600px) {
+    .menu{
+        display: none;
+    }
+    .mobile-menu-button{
+        display: block;
+    }
+    .menu.mobile-menu{
+        position: fixed;
+        width: 100%;
+        min-height: 100vh;
+        top: 30px;
+        background-color: rgba(0, 0, 255, 0.425);
+        padding-left: 10px;
+        /* display: none; */
+        display: block;
+        left: -100%;
+        transition: all 2s;
+    }
+    .menu.mobile-menu.show{
+        /* display: block; */
+        left: 0;
+    }
+    .menu.mobile-menu ul{
+        display: flex;
+        flex-direction: column;
+    }
 }
