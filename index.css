@@ -18,6 +18,7 @@
     width: 100%;
 }
 nav{
+    min-height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,6 +37,56 @@ nav{
 .mobile-menu-button{
     display: none;
 }
+/* main */
+
+section{
+    min-height: 100vh;
+    padding: 50px;
+}
+section.home{
+    background-color: #00666670;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home-content h3{
+    font-size: 3rem;
+    font-size: 700;
+}
+.home-content h1{
+    font-size: 5rem;
+    font-size: 700;
+    /* line-height: 1; */
+}
+.home-content p{
+    font-size: 1.5rem;
+    
+}
+.home-img img{
+    width: 35vw;
+}
+/* About */
+section.about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-img img{
+    width: 35vw;
+}
+/* service */
+section.service{
+    background-color: #00666670;
+}
+section.contact{
+    background-color: #00666670;
+}
+footer{
+    min-height: 10vh;
+}
+
+
+
 /* break point */
 @media screen and (max-width:600px) {
     .menu{
