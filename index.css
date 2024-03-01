@@ -34,6 +34,30 @@ nav{
 .menu ul li{
     list-style: none;
 }
+.menu ul li a{
+    text-decoration: none;
+    /* list-style: none; */
+    /* background-color: red; */
+    position: relative;
+}
+.menu ul li a::after{
+    /* list-style: none; */
+    /* background-color: red; */
+    content: '';
+    width: 0%;
+    height: 3px;
+    background-color: blue;
+    border-radius: 30px;
+    transition: all 1s;
+
+    position: absolute;
+    left: -5%;
+    top: 100%;
+
+}
+.menu ul li a:hover::after{
+    width: 110%;
+}
 .mobile-menu-button{
     display: none;
 }
@@ -42,12 +66,25 @@ nav{
 section{
     min-height: 100vh;
     padding: 50px;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.home-content{
+    /* border: 2px solid; */
+    flex: 1 1 200px;
+   
+}
+.home-img{
+    flex: 1 1 200px;
+    /* border: 2px solid; */
+
 }
 section.home{
     background-color: #00666670;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* border: 2px solid; */
 }
 .home-content h3{
     font-size: 3rem;
@@ -63,7 +100,23 @@ section.home{
     
 }
 .home-img img{
-    width: 35vw;
+    width: 100%;
+
+    animation: floatImage 3s ease-in-out infinite;
+}
+@keyframes floatImage {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(50px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+.niche{
+    color: blue;
 }
 /* About */
 section.about{
@@ -71,8 +124,18 @@ section.about{
     align-items: center;
     justify-content: center;
 }
+.about-img{
+    flex: 1 1 200px;
+
+}
+.about-content{
+    flex: 1 1 200px;
+
+}
 .about-img img{
-    width: 35vw;
+    width: 100%;
+    animation: floatImage 3s ease-in-out infinite;
+
 }
 /* service */
 section.service{
@@ -91,27 +154,49 @@ footer{
 @media screen and (max-width:600px) {
     .menu{
         display: none;
+        z-index: 999;
     }
     .mobile-menu-button{
         display: block;
     }
     .menu.mobile-menu{
+        /* color: wheat; */
         position: fixed;
         width: 100%;
         min-height: 100vh;
-        top: 30px;
-        background-color: rgba(0, 0, 255, 0.425);
-        padding-left: 10px;
+        top: 10vh;
+        background-color: rgb(0, 58, 97);
+        padding: 30px;
         /* display: none; */
         display: block;
         left: -100%;
+        /* how do u want it to appear */
         transition: all 2s;
+    }
+    .menu.mobile-menu a{
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
     }
     .menu.mobile-menu.show{
         /* display: block; */
         left: 0;
     }
     .menu.mobile-menu ul{
+        display: flex;
+        flex-direction: column;
+    }
+    section{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    section .home-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    section.about{
         display: flex;
         flex-direction: column;
     }
